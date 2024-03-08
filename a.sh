@@ -11,23 +11,22 @@ mv h872/recovery.img h872/recoveryh872.img
 mv us997/recovery.img us997/recoveryus997.img
 
 mkdir -p temp
-cp h872.json ./h872
-cp h870.json ./h870
-cp us997.json ./us997
 mv h870/*.json h872/*.json us997/*.json ./temp
+
+rm -rf android_vendor_crDroidOTA
+git clone https://$GH_TOKEN@github.com/xc112lg/android_vendor_crDroidOTA
+cp -n android_vendor_crDroidOTA/h872.json temp/h8721.json
+cp -n android_vendor_crDroidOTA/h870.json temp/h8701.json
+cp -n android_vendor_crDroidOTA/us997.json temp/us9971.json
+
 cd temp
-cp -n h872.json h8721.json
-cp -n h870.json h8701.json
-cp -n us997.json us9971.json
 sed -n '/"response": \[/,/\]/p' h872.json | sed '1d;$d' > output.json;sed -e '/"response": \[/{r output.json' -e 'a,' -e '}' h8721.json > temp.json && mv temp.json h8721.json
 sed -n '/"response": \[/,/\]/p' h870.json | sed '1d;$d' > output.json;sed -e '/"response": \[/{r output.json' -e 'a,' -e '}' h8701.json > temp.json && mv temp.json h8701.json
 sed -n '/"response": \[/,/\]/p' us997.json | sed '1d;$d' > output.json;sed -e '/"response": \[/{r output.json' -e 'a,' -e '}' us9971.json > temp.json && mv temp.json us9971.json
 cd ..
-rm -rf android_vendor_crDroidOTA
-git clone https://$GH_TOKEN@github.com/xc112lg/android_vendor_crDroidOTA
-cp temp/h8721.json ./android_vendor_crDroidOTA/h872.json
-cp temp/h8701.json ./android_vendor_crDroidOTA/h870.json
-cp temp/us9971.json ./android_vendor_crDroidOTA/us997.json
+mv temp/h8721.json ./android_vendor_crDroidOTA/h872.json
+mv temp/h8701.json ./android_vendor_crDroidOTA/h870.json
+mv temp/us9971.json ./android_vendor_crDroidOTA/us997.json
 cd android_vendor_crDroidOTA
 git add .
 git commit -m "update"
