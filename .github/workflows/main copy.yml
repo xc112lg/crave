@@ -86,7 +86,8 @@ jobs:
           echo "              #Thanks to UV n Team">> craverun.sh
           echo "        #no dual account just to build faster">> craverun.sh
           echo "              #respect the rule">> craverun.sh
- 
+          echo "              #Weekly Update">> craverun.sh
+          echo "#https://github.com/xc112lg/crdroid10.x/releases">> craverun.sh
           echo "mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip">> craverun.sh
 
           
