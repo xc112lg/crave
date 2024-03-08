@@ -5,7 +5,6 @@ cp -f crdroid10.x/a.sh a.sh
 chmod +x a.sh
 basename "$(pwd)"> bp.txt
 crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
-"                #Test Run
               #Thanks to UV n Team
         #no dual account just to build faster
               #respect the rule
