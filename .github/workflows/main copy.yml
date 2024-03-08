@@ -1,7 +1,8 @@
 name: Weekly Update
 
-schedule:
-  - cron: '0 0 * * *'
+on:
+  schedule:
+    - cron: '0 0 * * *' # UTC time: midnight every Tuesday
   workflow_dispatch:
     inputs:
       BASE_PROJECT:
