@@ -4,64 +4,7 @@ on:
   schedule:
     - cron: '0 0 * * *' # UTC time: midnight every Tuesday
   workflow_dispatch:
-    inputs:
-      BASE_PROJECT:
-        description: 'Choose a base project:'
-        required: true
-        default: 'ArrowOS13'
-        type: choice
-        options:
-          - 'ArrowOS13'
-          - 'DerpFest13'
-          - 'LineageOS20'
-          - 'LineageOS21'
-      BUILD_DIFFERENT_ROM:
-        description: "Command to initialize a different 'repo' project:"
-        required: false
-      REMOVALS:
-        description: "Folders to be removed before syncing:"
-        required: false
-      LOCAL_MANIFEST:
-        description: "Personal local manifest [repository or raw]:"
-        required: true
-        default: 'https://github.com/jayz1212/local_manifests'
-      LOCAL_MANIFEST_BRANCH:
-        description: "Personal local manifest's branch:"
-        required: false
-        default: 'main'
-      PRODUCT_NAME:
-        description: "Product to build:"
-        required: false
-        default: ""
-      BUILD_TYPE:
-        description: 'Type of build:'
-        required: false
-        default: '-userdebug'
-        type: choice
-        options: 
-        - '-eng'
-        - '-userdebug'
-        - '-user' 
-      BUILD_COMMAND:
-        description: 'Command to be used for compiling:'
-        required: false
-        default: 'm bacon'
-      THE_FORBIDDEN_ONE :
-        description: 'Use this command at caution it might delete you project, nahh who cares'
-        required: false
-        default: ''
-      CLEAN_BUILD:
-        description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
-        required: true
-        default: 'no'
-        type: choice
-        options: 
-        - 'yes'
-        - 'no'
-      # SAY_SOMETHING_NICE :
-      #   description: 'anything you want to say'
-      #   required: false
-      #   default: ''
+
               
 jobs:
   deploy:
