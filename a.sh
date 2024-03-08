@@ -33,6 +33,7 @@ git commit -m "update"
 git push 
 cd ..
 
+git clone https://$GH_TOKEN@github.com/xc112lg/android_vendor_crDroidOTA
 mv h870/* h872/* us997/* ./crdroid10.x/ 
 
 
