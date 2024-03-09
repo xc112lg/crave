@@ -83,9 +83,9 @@ jobs:
           echo  'basename "$(pwd)"> bp.txt'>> craverun.sh
           echo "crave run --no-patch $CLEAN_FLAG -- \"          #© crave.io Inc. 2017-2024" >> craverun.sh
           #echo '"                #Test Run'>> craverun.sh
-          echo "              #Thanks to UV n Team">> craverun.sh
-          echo "        #no dual account just to build faster">> craverun.sh
-          echo "              #respect the rule">> craverun.sh
+          # echo "              #Thanks to UV n Team">> craverun.sh
+          # echo "        #no dual account just to build faster">> craverun.sh
+          # echo "              #respect the rule">> craverun.sh
           echo "#testbuild weekly ota update">> craverun.sh
           echo "#https://github.com/xc112lg/crdroid10.x/releases">> craverun.sh
           echo "mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip">> craverun.sh
