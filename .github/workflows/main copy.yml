@@ -81,9 +81,9 @@ jobs:
           echo  "cp -f crdroid10.x/a.sh a.sh">> craverun.sh
           echo  "chmod +x a.sh">> craverun.sh
           echo  'basename "$(pwd)"> bp.txt'>> craverun.sh
-          echo "crave run --no-patch $CLEAN_FLAG -- \"          #© crave.io Inc. 2017-2024" >> craverun.sh
+          echo "crave run --no-patch $CLEAN_FLAG -- \"         " >> craverun.sh
           #echo '"                #Test Run'>> craverun.sh
-          # echo "              #Thanks to UV n Team">> craverun.sh
+          # echo "              #Thanks to UV n Team">> craverun.sh  #© crave.io Inc. 2017-2024
           # echo "        #no dual account just to build faster">> craverun.sh
           # echo "              #respect the rule">> craverun.sh
           echo "#testbuild weekly ota update">> craverun.sh
