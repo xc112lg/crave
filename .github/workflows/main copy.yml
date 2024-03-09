@@ -1,8 +1,8 @@
 name: Weekly Update
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # UTC time: midnight every Tuesday
+  # schedule:
+  #   - cron: '0 0 * * *' # UTC time: midnight every Tuesday
   workflow_dispatch:
 
               
