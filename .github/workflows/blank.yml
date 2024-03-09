@@ -1,0 +1,40 @@
+name: Crave Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Clean Workspace
+      run: |
+        git clean -ffdx
+        git reset --hard
+
+    - name: Download and Run get_crave.sh
+      run: |
+        curl -s https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | bash -s --
+
+    - name: Download crave.conf
+      run: |
+            envsubst < ${PWD}/crave.conf.sample >> ${PWD}/crave.conf
+            rm -rf ${PWD}/crave.conf.sample          
+
+
+    - name: Run Crave
+      run: |
+        ./crave -c ./crave.conf devspace
+
+    - name: Run Additional Command
+      run: |
+        ./crave devspace 'mkdir -p arrow;cd arrow;[ -d .repo ] || repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1   ; crave run --no-patch -- "this is a test"'
+   
+
