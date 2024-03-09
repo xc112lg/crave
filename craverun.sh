@@ -9,6 +9,6 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-mkdir -p cc;rm -rf scripts prebuilts/clang/host/linux-x86&& git clone https://github.com/xc112lg/scripts.git -b evot&&repo init --depth 1 -u https://github.com/Evolution-X/manifest -b udc&&  chmod u+x scripts/sync.sh && . scripts/sync.sh
+mkdir -p cc;rm -rf scripts prebuilts/clang/host/linux-x86;git clone https://github.com/xc112lg/scripts.git -b evot;repo init --depth 1 -u https://github.com/Evolution-X/manifest -b udc;chmod u+x scripts/sync.sh ;. scripts/sync.sh
 "
 . a.sh
