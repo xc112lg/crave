@@ -88,7 +88,7 @@ jobs:
           # echo "              #respect the rule">> craverun.sh
           echo "#testbuild weekly ota update">> craverun.sh
           echo "#https://github.com/xc112lg/crdroid10.x/releases">> craverun.sh
-          echo "mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip">> craverun.sh
+          echo "mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all clean delzip">> craverun.sh
 
           
           echo '"'>> craverun.sh
