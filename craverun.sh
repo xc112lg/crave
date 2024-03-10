@@ -7,6 +7,6 @@ basename "$(pwd)"> bp.txt
 crave run --no-patch  -- "         
 #testbuild weekly ota update
 #https://github.com/xc112lg/crdroid10.x/releases
-mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all clean delzip
+mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip
 "
 . a.sh
