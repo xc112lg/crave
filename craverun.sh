@@ -9,6 +9,6 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-rm -rf .repo/local_manifests && git clone https://github.com/LG-G6/scripts.git -b lineage-20 && mkdir .repo/local_manifests && cp scripts/roomservice.xml .repo/local_manifests/&& chmod +x scripts/sync.sh && . scripts/sync.sh && source build/envsetup.sh && lunch lineage_h872-userdebug && m -j16 bacon
+mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b evot;repo init --depth 1 -u https://github.com/Evolution-X/manifest -b udc;chmod u+x scripts/sync.sh ;. scripts/sync.sh
 "
 . a.sh
