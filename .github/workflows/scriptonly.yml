@@ -104,9 +104,9 @@ jobs:
           echo "chmod +x craverun.sh" >> run1.sh
           echo ". craverun.sh" >> run1.sh
           echo "#!/bin/bash" > craverun.sh
-          echo "rm -rf crdroid10.x" >> craverun.sh
-          echo 'git clone https://$GH_TOKEN@github.com/xc112lg/crdroid10.x.git' >> craverun.sh
-          echo  "cp -f crdroid10.x/a.sh a.sh">> craverun.sh
+          echo "rm -rf Evolution-X" >> craverun.sh
+          echo 'git clone https://$GH_TOKEN@github.com/xc112lg/Evolution-X.git' >> craverun.sh
+          echo  "cp -f Evolution-X/a.sh a.sh">> craverun.sh
           echo  "chmod +x a.sh">> craverun.sh
           echo  'basename "$(pwd)"> bp.txt'>> craverun.sh
           echo "crave run --no-patch $CLEAN_FLAG -- \"          #© crave.io Inc. 2017-2024" >> craverun.sh
