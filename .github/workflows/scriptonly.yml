@@ -109,33 +109,33 @@ jobs:
           echo  "cp -f Evolution-X/a.sh a.sh">> craverun.sh
           echo  "chmod +x a.sh">> craverun.sh
           echo  'basename "$(pwd)"> bp.txt'>> craverun.sh
-          echo "crave run --no-patch $CLEAN_FLAG -- \"          #© crave.io Inc. 2017-2024" >> craverun.sh
-          #echo '"                #Im not a bot'>> craverun.sh
-          echo "              #Thanks to UV n Team">> craverun.sh
-          echo "        #no dual account just to build faster">> craverun.sh
-          echo "              #respect the rule">> craverun.sh
-          # echo "#${{ inputs.SAY_SOMETHING_NICE }} ">> craverun.sh
-          echo "THE_FORBIDDEN_ONE: ${{ inputs.THE_FORBIDDEN_ONE }}"
-          echo "PRODUCT_NAME: ${{ inputs.PRODUCT_NAME }}"
+          # echo "crave run --no-patch $CLEAN_FLAG -- \"          #© crave.io Inc. 2017-2024" >> craverun.sh
+          # #echo '"                #Im not a bot'>> craverun.sh
+          # echo "              #Thanks to UV n Team">> craverun.sh
+          # echo "        #no dual account just to build faster">> craverun.sh
+          # echo "              #respect the rule">> craverun.sh
+          # # echo "#${{ inputs.SAY_SOMETHING_NICE }} ">> craverun.sh
+          # echo "THE_FORBIDDEN_ONE: ${{ inputs.THE_FORBIDDEN_ONE }}"
+          # echo "PRODUCT_NAME: ${{ inputs.PRODUCT_NAME }}"
           
-          if [ -n "${{ inputs.THE_FORBIDDEN_ONE }}" ] && [ -n "${{ inputs.PRODUCT_NAME }}" ]; then
-              echo "Both THE_FORBIDDEN_ONE and PRODUCT_NAME have values. Cannot run this command. Exiting."
-              exit 1
-          elif [ -n "${{ inputs.THE_FORBIDDEN_ONE }}" ]; then
-              echo "${{ inputs.BUILD_DIFFERENT_ROM }}">> craverun.sh
-              echo "${{ inputs.THE_FORBIDDEN_ONE }}">> craverun.sh
-          else
-              echo "${{ inputs.BUILD_DIFFERENT_ROM }}">> craverun.sh
-              echo "rm -rf .repo/local_manifests $deleteprep ${{ inputs.REMOVALS }}">> craverun.sh
-              echo "git clone ${{ inputs.LOCAL_MANIFEST}} -b ${{ inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests">> craverun.sh
-              echo 'repo sync -c -j\$(nproc --all) --force-sync --no-clone-bundle --no-tags'>> craverun.sh
-              echo "source build/envsetup.sh">> craverun.sh
-              echo "m installclean">> craverun.sh
-              echo "lunch ${{ inputs.PRODUCT_NAME }}${{ inputs.BUILD_TYPE }}">> craverun.sh
-              echo "${{ inputs.BUILD_COMMAND }}">> craverun.sh
-          fi
+          # if [ -n "${{ inputs.THE_FORBIDDEN_ONE }}" ] && [ -n "${{ inputs.PRODUCT_NAME }}" ]; then
+          #     echo "Both THE_FORBIDDEN_ONE and PRODUCT_NAME have values. Cannot run this command. Exiting."
+          #     exit 1
+          # elif [ -n "${{ inputs.THE_FORBIDDEN_ONE }}" ]; then
+          #     echo "${{ inputs.BUILD_DIFFERENT_ROM }}">> craverun.sh
+          #     echo "${{ inputs.THE_FORBIDDEN_ONE }}">> craverun.sh
+          # else
+          #     echo "${{ inputs.BUILD_DIFFERENT_ROM }}">> craverun.sh
+          #     echo "rm -rf .repo/local_manifests $deleteprep ${{ inputs.REMOVALS }}">> craverun.sh
+          #     echo "git clone ${{ inputs.LOCAL_MANIFEST}} -b ${{ inputs.LOCAL_MANIFEST_BRANCH }} .repo/local_manifests">> craverun.sh
+          #     echo 'repo sync -c -j\$(nproc --all) --force-sync --no-clone-bundle --no-tags'>> craverun.sh
+          #     echo "source build/envsetup.sh">> craverun.sh
+          #     echo "m installclean">> craverun.sh
+          #     echo "lunch ${{ inputs.PRODUCT_NAME }}${{ inputs.BUILD_TYPE }}">> craverun.sh
+          #     echo "${{ inputs.BUILD_COMMAND }}">> craverun.sh
+          # fi
           
-          echo '"'>> craverun.sh
+          # echo '"'>> craverun.sh
           echo  ". a.sh">> craverun.sh
 
       
