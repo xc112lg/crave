@@ -16,6 +16,7 @@ on:
           - 'DerpFest13'
           - 'LineageOS20'
           - 'LineageOS21'
+          - 'CipherOS'
       
       THE_FORBIDDEN_ONE :
         description: 'Use this command at caution it might delete you project, nahh who cares'
@@ -57,6 +58,7 @@ jobs:
             'DerpFest13') BASE_PROJECT_VALUE='repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --depth=1' ;;
             'LineageOS20') BASE_PROJECT_VALUE='repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1' ;;
             'LineageOS21') BASE_PROJECT_VALUE='repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1' ;;
+            'CipherOS') BASE_PROJECT_VALUE='repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1' ;;
             *) BASE_PROJECT_VALUE='default-command' ;;  # Provide a default command for unknown options
           esac
           echo "BASE_PROJECT_NAME=$BASE_PROJECT_NAME" >> $GITHUB_ENV
