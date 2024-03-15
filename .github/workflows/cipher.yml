@@ -21,7 +21,7 @@ on:
       THE_FORBIDDEN_ONE :
         description: 'Use this command at caution it might delete you project, nahh who cares'
         required: false
-        default: 'mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cipher;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip'
+        default: 'mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cipher;chmod u+x scripts/sync.sh;bash scripts/sync.sh'
       CLEAN_BUILD:
         description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
         required: true
