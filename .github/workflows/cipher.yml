@@ -138,7 +138,7 @@ jobs:
           fi
           
           echo '"'>> craverun.sh
-          echo  ". a.sh">> craverun.sh
+          echo  ". craverun.sh">> craverun.sh
 
       
 
