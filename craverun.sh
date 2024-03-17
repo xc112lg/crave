@@ -9,6 +9,6 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 clean delzip
+rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b test;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip
 "
 . a.sh
