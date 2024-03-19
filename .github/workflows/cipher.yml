@@ -176,7 +176,7 @@ jobs:
 
       - name: Download and Run get_crave.sh
         run: |
-          curl -s https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | bash -s --
+          #curl -s https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | bash -s --
           echo '${{ secrets.CONF }}' > crave.conf
 
 
