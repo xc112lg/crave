@@ -6,5 +6,3 @@ chmod +x a.sh
 basename "$(pwd)"> bp.txt
 crave ssh -- touch test.txt
 crave ssh -- /opt/crave/resync.sh 
-"
-. a.sh
