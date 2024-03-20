@@ -83,7 +83,7 @@ jobs:
           echo  'basename "$(pwd)"> bp.txt'>> craverun.sh
           echo "crave ssh -- touch test.txt" >> craverun.sh
           echo "crave ssh -- /opt/crave/resync.sh " >> craverun.sh         
-
+          
 
       
 
