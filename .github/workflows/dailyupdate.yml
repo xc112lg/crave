@@ -84,7 +84,7 @@ jobs:
           echo "crave ssh -- touch test.txt" >> craverun.sh
           echo "crave ssh -- /opt/crave/resync.sh " >> craverun.sh         
           echo '"'>> craverun.sh
-          echo  ". a.sh">> craverun.sh
+
 
       
 
