@@ -11,17 +11,13 @@ on:
         required: true
         default: 'CipherOS'
         type: choice
-        options:
-          - 'ArrowOS13'
-          - 'DerpFest13'
-          - 'LineageOS20'
-          - 'LineageOS21'
-          - 'CipherOS'
+        options:'
+          - 'PixelOS'
       
       THE_FORBIDDEN_ONE :
         description: 'Use this command at caution it might delete you project, nahh who cares'
         required: false
-        default: 'mkdir -p cc;rm -rf scripts;repo init --depth 1 -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs;git clone https://github.com/xc112lg/scripts.git -b aosp;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip aosp aosp m bacon 32'
+        default: 'rm -rf scripts;repo init --depth 1 -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs;git clone https://github.com/xc112lg/scripts.git -b aosp;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip aosp aosp m bacon 32'
       CLEAN_BUILD:
         description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
         required: true
@@ -57,7 +53,7 @@ jobs:
             'ArrowOS13') BASE_PROJECT_VALUE='repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 --depth=1' ;;
             'DerpFest13') BASE_PROJECT_VALUE='repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 --depth=1' ;;
             'LineageOS20') BASE_PROJECT_VALUE='repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1' ;;
-            'LineageOS21') BASE_PROJECT_VALUE='repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1' ;;
+            'PixelOS') BASE_PROJECT_VALUE='repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1' ;;
             'CipherOS') BASE_PROJECT_VALUE='repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1' ;;
             *) BASE_PROJECT_VALUE='default-command' ;;  # Provide a default command for unknown options
           esac
