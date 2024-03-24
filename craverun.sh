@@ -9,6 +9,6 @@ crave run --no-patch --clean -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-rm -rf scripts;repo init --depth 1 -u repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --git-lfs;git clone https://github.com/xc112lg/scripts.git -b aosp;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip derp derp m derp 32
+rm -rf scripts;repo init --depth 1 -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --git-lfs;git clone https://github.com/xc112lg/scripts.git -b aosp;chmod u+x scripts/sync.sh;bash scripts/sync.sh all build delzip derp derp m derp 32
 "
 . a.sh
