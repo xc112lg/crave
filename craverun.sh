@@ -1,8 +1,14 @@
 #!/bin/bash
-rm -rf crdroid10.x
-git clone https://$GH_TOKEN@github.com/xc112lg/crdroid10.x.git
-cp -f crdroid10.x/a.sh a.sh
+rm -rf Evolution-X
+git clone https://$GH_TOKEN@github.com/xc112lg/Evolution-X.git
+cp -f Evolution-X/a.sh a.sh
 chmod +x a.sh
 basename "$(pwd)"> bp.txt
-crave ssh -- touch test.txt
-crave ssh -- /opt/crave/resync.sh 
+crave run --no-patch --clean -- "          #© crave.io Inc. 2017-2024
+              #Thanks to UV n Team
+        #no dual account just to build faster
+              #respect the rule
+
+rm -rf lineage_build_leaos .repo/local_manifests&& git clone https://github.com/xc112lg/lineage_build_leaos -b lineage-18.1&&repo init  --depth 1 -u https://github.com/crdroidandroid/android.git -b 11.0 --git-lfs&& bash lineage_build_leaos/build.sh treble 64BVZ
+"
+. a.sh
