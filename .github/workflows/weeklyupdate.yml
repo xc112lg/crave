@@ -4,6 +4,15 @@ on:
   # schedule:
   #   - cron: '0 0 * * *' # UTC time: midnight every Tuesday
   workflow_dispatch:
+    inputs:
+      CLEAN_BUILD:
+        description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
+        required: true
+        default: 'no'
+        type: choice
+        options: 
+        - 'yes'
+        - 'no'
 
               
 jobs:
