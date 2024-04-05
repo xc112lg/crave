@@ -2,11 +2,11 @@
 export GH_TOKEN=$(cat gh_token.txt)
 gh auth login --with-token $GH_TOKEN
 gh auth status
-mkdir -p LineageOS20
+mkdir -p LineageOS200
 bp=$(cat bp.txt)
 cp -f crave/run1.sh run1.sh
 chmod +x run1.sh
-cp -f crave/craverun.sh LineageOS20
+cp -f crave/craverun.sh LineageOS200
 tmux set-environment bp "$bp"
 tmux kill-session -t $bp
 tmux new-session -d -s $bp
