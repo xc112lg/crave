@@ -9,7 +9,7 @@ on:
       BASE_PROJECT:
         description: 'Choose a base project:'
         required: true
-        default: 'LineageOS20'
+        default: 'LineageOS200'
         type: choice
         options:
           - 'ArrowOS13'
@@ -21,7 +21,7 @@ on:
       THE_FORBIDDEN_ONE :
         description: 'Use this command at caution it might delete you project, nahh who cares'
         required: false
-        default: 'rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b aosp;repo init -u https://github.com/Evolution-X/manifest -b uqpr2;chmod u+x scripts/sync.sh ;bash scripts/sync.sh h872 build delzip evolution evolution m evolution 32'
+        default: 'mkdir -p cc;rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b mi;chmod u+x scripts/sync.sh;bash scripts/sync.sh'
       CLEAN_BUILD:
         description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
         required: true
