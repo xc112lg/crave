@@ -9,6 +9,6 @@ crave run --no-patch --clean -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip lineage -ap1a lineage m bacon 128
+rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b aosp;repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --git-lfs -g default,-mips,-darwin,-notdefault;chmod u+x scripts/sync.sh ;bash scripts/sync.sh h872 build delzip derp derp m derp 128
 "
 . a.sh
