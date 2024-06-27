@@ -1,31 +1,31 @@
 name: CI
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-23.04
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Install deps
-        run : |
-          sudo apt-get install wget -y && sudo wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh && sudo bash android*
-      - name: Extractor
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
         run: |
-          sudo mkdir dumper
-          cd dumper
-          sudo wget -q https://github.com/xc112lg/crdroid10.x/releases/download/crDroidAndroid-14.0-20240318/crDroidAndroid-14.0-20240318-h870-v10.2.zip
-          sudo mkdir dump
-          sudo unzip -o *.zip -d dump
-          cd dump
-          sudo brotli --decompress system.new.dat.br
-          curl -sLo sdat2img.py https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
-          python3 sdat2img.py system.transfer.list system.new.dat system.img
-          7z x system.img -y -osystem
-          cat system/system/build.prop
-          curl --upload-file ./system/system/build.prop http://transfer.sh/build.prop
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          pytest
