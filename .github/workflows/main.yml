@@ -1,31 +1,23 @@
-name: CI
+code: name: Windows - LiteManager
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-23.04
-
+    name: Start Building...
+    runs-on: windows-latest
+    timeout-minutes: 9999
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-
-      - name: Install dependencies
+      - name: Downloading & Installing Essentials
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
 
-      - name: Run tests
-        run: |
-          pytest
+      - name: Connect to LiteManager
+        run: cmd /c show.bat
+
+      - name: Time Counter
+        run: cmd /c loop.bat
+
