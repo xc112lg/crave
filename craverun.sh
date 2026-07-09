@@ -9,6 +9,6 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-curl -sf https://raw.githubusercontent.com/xc112lg/nn/refs/heads/main/a.sh | bash
+rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd10;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs;chmod u+x scripts/sync.sh;bash scripts/sync.sh h872 build delzip lineage -ap1a lineage m bacon 128
 "
 . a.sh
