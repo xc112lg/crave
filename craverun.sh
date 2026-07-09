@@ -9,6 +9,6 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b cd9-b;repo init --depth 1 -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs;chmod u+x scripts/sync.sh
+curl -sf https://raw.githubusercontent.com/xc112lg/nn/refs/heads/main/a.sh | bash
 "
 . a.sh
