@@ -9,5 +9,5 @@ crave run --no-patch  -- "          #© crave.io Inc. 2017-2024
         #no dual account just to build faster
               #respect the rule
 
-curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/test.sh | bash -s evolution
+curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/test.sh | bash -s evolution upload
 "
