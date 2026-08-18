@@ -99,10 +99,9 @@ jobs:
           echo 'tmux send-keys -t $bp 'C-a' 'C-k' './run1.sh' 'C-m'' >> run.sh
           echo 'echo "$(pwd)" > bp.txt'
           #echo 'tmux send-keys -t $bp C-a C-k './run1.sh'' >> run.sh
-          echo "mv .env ${{ inputs.BASE_PROJECT }}" > run1.sh
+          echo "cp .env ${{ inputs.BASE_PROJECT }}" > run1.sh
           echo "cd ${{ inputs.BASE_PROJECT }}" >> run1.sh
           echo "crave push .env -d /tmp/src/android/" >> run1.sh
-          echo "rm .env" >> run1.sh
           echo "${BASE_PROJECT_VALUE}" >> run1.sh
           echo "chmod +x craverun.sh" >> run1.sh
           echo ". craverun.sh" >> run1.sh
