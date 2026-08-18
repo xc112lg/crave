@@ -20,8 +20,8 @@ on:
       
       THE_FORBIDDEN_ONE :
         description: 'Use this command at caution it might delete you project, nahh who cares'
-        required: false
-        default: 'rm -rf scripts;git clone https://github.com/xc112lg/scripts.git -b patch-4;chmod u+x scripts/sync.sh;bash scripts/sync.sh'
+        required: true
+        default: 'curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/test.sh | bash -s evolution upload'
       CLEAN_BUILD:
         description: 'Build with a clean workspace? Selecting Yes here will reset the data to its default state removing any of your work'
         required: true
