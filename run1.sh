@@ -1,6 +1,4 @@
-export GH_TOKEN=$(cat gh_token.txt)
-gh auth login --with-token $GH_TOKEN
 cd LineageOS21
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
+repo init -u https://github.com/accupara/los21-exp.git -b lineage-21.0 --git-lfs --depth=1
 chmod +x craverun.sh
 . craverun.sh
