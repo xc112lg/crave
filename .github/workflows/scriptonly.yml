@@ -188,7 +188,7 @@ jobs:
           
           # Run your commands and continue even if there is an error
           ./crave -c ./crave.conf devspace || true
-          ./crave devspace 'echo "${{ secrets.GH_TOKEN }}" > .env;;echo "${{ inputs.BASE_PROJECT }}" > bp.txt;bp=$($bp);rm -rf crave;git clone https://$GH_TOKEN@github.com/${{ github.repository }}.git;rm run.sh;cp -f crave/run.sh run.sh;chmod +x run.sh;. run.sh' || true
+          ./crave devspace 'echo "${{ secrets.GH_TOKEN }}" > .env;echo "${{ inputs.BASE_PROJECT }}" > bp.txt;bp=$($bp);rm -rf crave;git clone https://$GH_TOKEN@github.com/${{ github.repository }}.git;rm run.sh;cp -f crave/run.sh run.sh;chmod +x run.sh;. run.sh' || true
 
       - name: Display Build URL
         run: |
