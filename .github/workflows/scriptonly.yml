@@ -99,9 +99,10 @@ jobs:
           echo 'tmux send-keys -t $bp 'C-a' 'C-k' './run1.sh' 'C-m'' >> run.sh
           echo 'echo "$(pwd)" > bp.txt'
           #echo 'tmux send-keys -t $bp C-a C-k './run1.sh'' >> run.sh
-          echo 'export GH_TOKEN=$(cat gh_token.txt)' >> run1.sh
-          echo 'gh auth login --with-token $GH_TOKEN' >> run1.sh
-          echo "cd ${{ inputs.BASE_PROJECT }}" > run1.sh
+          echo "mv .env ${{ inputs.BASE_PROJECT }}" > run1.sh
+          echo "cd ${{ inputs.BASE_PROJECT }}" >> run1.sh
+          echo "crave push .env -d /tmp/src/android/" >> run1.sh
+          echo "rm .env" >> run1.sh
           echo "${BASE_PROJECT_VALUE}" >> run1.sh
           echo "chmod +x craverun.sh" >> run1.sh
           echo ". craverun.sh" >> run1.sh
@@ -188,7 +189,7 @@ jobs:
           
           # Run your commands and continue even if there is an error
           ./crave -c ./crave.conf devspace || true
-          ./crave devspace 'echo "${{ secrets.GH_TOKEN }}" > gh_token.txt;export GH_TOKEN=$(cat gh_token.txt);echo "${{ inputs.BASE_PROJECT }}" > bp.txt;bp=$($bp);rm -rf crave;git clone https://$GH_TOKEN@github.com/${{ github.repository }}.git;rm run.sh;cp -f crave/run.sh run.sh;chmod +x run.sh;. run.sh' || true
+          ./crave devspace 'echo "${{ secrets.GH_TOKEN }}" > .env;;echo "${{ inputs.BASE_PROJECT }}" > bp.txt;bp=$($bp);rm -rf crave;git clone https://$GH_TOKEN@github.com/${{ github.repository }}.git;rm run.sh;cp -f crave/run.sh run.sh;chmod +x run.sh;. run.sh' || true
 
       - name: Display Build URL
         run: |
